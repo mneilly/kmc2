@@ -86,9 +86,9 @@ def kmc2(X, k, chain_length=200, afkmc2=True, random_state=None, weights=None):
     centers[0, :] = rel_row.todense().flatten() if sparse else rel_row
     if afkmc2:
         di = np.min(euclidean_distances(X, centers[0:1, :], squared=True), axis=1)*weights
-				# q Only the potentials
-				q=weights/np.sum(weights)
-				if np.sum(di): #if all of X's rows are duplicated then sum(di)=0
+        # q Only the potentials
+        q=weights/np.sum(weights)
+        if np.sum(di): #if all of X's rows are duplicated then sum(di)=0
         	q += di/np.sum(di)
     else:
         q = np.copy(weights)

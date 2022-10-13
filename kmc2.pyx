@@ -89,7 +89,7 @@ def kmc2(X, k, chain_length=200, afkmc2=True, random_state=None, weights=None):
         # q Only the potentials
         q=weights/np.sum(weights)
         if np.sum(di): #if all of X's rows are duplicated then sum(di)=0
-        	q += di/np.sum(di)
+            q += di/np.sum(di)
     else:
         q = np.copy(weights)
     # Renormalize the proposal distribution
